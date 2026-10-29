@@ -15,7 +15,15 @@ We use ArduPilot's native ROS 2 DDS interface (`/ap/cmd_vel`, `/ap/pose/filtered
 ArduPilot holds altitude (rangefinder) and attitude. Above that, everything is the standard ROS 2 2D navigation stack: Nav2 with a holonomic DWB controller and frontier exploration. Our `cmd_vel_bridge` adds altitude correction and a watchdog, and only forwards commands while the mission enables navigation.
 
 ## D-005 · Current 13" airframe is the development mule (2026-10-29)
-No quad with 13" props fits the 610 mm launch box. A compact 7" frame (≤ 450 mm with guards) is the competition airframe. This is pending the team's frame measurements.
+No quad with 13" props fits the 610 mm launch box. A compact 7" frame (≤ 450 mm with guards) is the competition airframe. Confirmed by the team's measurement (2026-10-29): 105 cm prop tip to prop tip and 83 cm frame end to end, both diagonal. The box's own diagonal is 86 cm, so the mule fits in no orientation, and it would leave only 5–8 cm a side in a 1 m corridor.
 
 ## D-006 · Survivor grid labels are configurable (2026-10-29)
 The organizers have not yet published the grid convention. `navyam_perception.grid.ArenaGrid` takes origin, yaw, cell size and label style as parameters. The default labels columns A, B, C… along the arena x axis and rows 1, 2, 3… along y, counted from the arena corner on the entry side.
+
+## D-007 · RC link: FlySky now, ELRS for the competition (2026-10-29)
+The mule flies a FlySky transmitter with an FS-iA6B receiver on RCIN. That's fine for development once its throttle failsafe is configured (see `firmware/ardupilot/navyam_base.param`). The competition frame gets an ELRS receiver for the TX16S already in the BOM: a clean no-signal failsafe and enough channels for kill, mode and abort switches.
+
+## D-008 · Team computers (2026-10-29)
+- **Dell RTX gaming laptop:** dual-boot Ubuntu 22.04. Used for simulation (Gazebo + SITL) and YOLO training.
+- **Samsung Galaxy Book Pro 360:** stays on Windows as the GCS laptop, running Mission Planner and the Navyam GCS page in a browser.
+- **Jetson:** the only computer on the drone.

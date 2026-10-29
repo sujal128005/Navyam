@@ -36,12 +36,22 @@ RNGFND1_TYPE,10
 RNGFND1_ORIENT,25
 # 4.6+: RNGFND1_MAX,8 and RNGFND1_MIN,0.01. On 4.5: RNGFND1_MAX_CM,800 and RNGFND1_MIN_CM,1
 
-# ---- ELRS receiver (CRSF). Set the port it is wired to, e.g. SERIAL5: ----
+# ---- RC receiver ----
+# Today (dev mule): FlySky FS-iA6B on the Cube's RCIN port, iBUS or PPM (ArduPilot autodetects).
+#   The FS-iA6B only reports signal loss if a throttle failsafe value is set in the transmitter.
+#   1. Mission Planner: Radio Calibration (note the throttle minimum, e.g. ~1000).
+#   2. Transmitter failsafe menu: set CH3 (throttle) failsafe below that minimum, e.g. ~900.
+#   3. FS_THR_VALUE between the two, e.g. 950 (below).
+#   4. Props off: switch the transmitter off; Mission Planner must show "Radio" failsafe.
+FS_THR_VALUE,950
+# Competition frame: ELRS receiver (CRSF) for the TX16S on a serial port, e.g. SERIAL5:
 # SERIAL5_PROTOCOL,23
 # RSSI_TYPE,3
 
-# ---- Motors: 4-in-1 BLHeli_S ESC ----
-MOT_PWM_TYPE,6
+# ---- Motors ----
+# Dev mule flies 4 x Holybro 40A ESCs: keep its current MOT_PWM_TYPE until the ESC model's
+# DShot support is confirmed. Competition frame (JHEMCU 4-in-1, BLHeli_S): DShot600.
+# MOT_PWM_TYPE,6
 
 # ---- Failsafes required by the NIDAR brief ----
 # RC link loss -> LAND
