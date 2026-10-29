@@ -50,7 +50,7 @@ sudo apt install -y git python3-pip
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 cd ~
-git clone https://github.com/sujal128005/navyam.git
+git clone https://github.com/sujal128005/Navyam.git navyam
 cd navyam
 ```
 
