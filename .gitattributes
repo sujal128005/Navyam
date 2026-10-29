@@ -1,0 +1,5 @@
+# The code runs on Linux (Jetson, Ubuntu sim PCs): keep LF everywhere.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pt binary

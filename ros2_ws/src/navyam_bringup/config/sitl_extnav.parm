@@ -1,0 +1,14 @@
+# SITL: take position and yaw from SLAM (ExternalNav) instead of GPS,
+# as in ArduPilot's "Cartographer SLAM with ROS 2 in SITL" guide.
+AHRS_EKF_TYPE 3
+EK2_ENABLE 0
+EK3_ENABLE 1
+EK3_SRC1_POSXY 6
+EK3_SRC1_POSZ 1
+EK3_SRC1_VELXY 6
+EK3_SRC1_VELZ 6
+EK3_SRC1_YAW 6
+VISO_TYPE 1
+# Indoor speed limits for GUIDED
+WPNAV_SPEED 50
+WPNAV_ACCEL 100

@@ -1,0 +1,48 @@
+# Navyam node parameters. Grid parameters (grid_*) and expected_survivors come from the
+# world's NAME.params.yaml in simulation, or from the organizers' layout at the competition.
+
+mission:
+  ros__parameters:
+    takeoff_alt_m: 1.1
+    takeoff_reached_frac: 0.85
+    arm_timeout_s: 5.0
+    takeoff_timeout_s: 25.0
+    explore_budget_s: 600.0
+    min_battery_pct: 35.0
+    expected_survivors: 6
+    stall_s: 30.0
+    stall_growth_cells: 50
+    home_radius_m: 0.5
+    return_timeout_s: 240.0
+    nav_retries: 2
+    home_x: 0.0
+    home_y: 0.0
+
+cmd_vel_bridge:
+  ros__parameters:
+    takeoff_alt_m: 1.1
+    max_xy: 0.5
+    max_yaw_rate: 0.8
+    max_vz: 0.3
+    kz: 0.8
+    cmd_timeout_s: 0.5
+    rate_hz: 20.0
+
+survivor_registry:
+  ros__parameters:
+    merge_radius_m: 0.7
+    confirm_hits: 5
+    confirm_window_s: 1.5
+    stale_s: 5.0
+    min_confidence: 0.4
+
+survivor_detector:
+  ros__parameters:
+    model: yolo11n.pt
+    confidence: 0.5
+    imgsz: 640
+    target_frame: map
+    min_depth_m: 0.3
+    max_depth_m: 6.0
+    max_rate_hz: 10.0
+    publish_image: true

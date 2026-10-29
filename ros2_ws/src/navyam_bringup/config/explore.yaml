@@ -1,0 +1,16 @@
+# explore_lite (m-explore-ros2) frontier exploration on the SLAM map.
+# The mission node pauses/resumes it on /explore/resume and does the return to the exit itself.
+explore_node:
+  ros__parameters:
+    robot_base_frame: base_link
+    return_to_init: false
+    costmap_topic: map
+    costmap_updates_topic: map_updates
+    visualize: true
+    planner_frequency: 0.5
+    progress_timeout: 20.0
+    potential_scale: 3.0
+    orientation_scale: 0.0
+    gain_scale: 1.0
+    transform_tolerance: 0.3
+    min_frontier_size: 0.5
