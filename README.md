@@ -5,6 +5,7 @@ Autonomous GPS-denied indoor drone for **NIDAR Track 1, "AirMouse"**. The drone 
 - Technical plan (hardware audit, architecture, roadmap): https://claude.ai/artifact/CnLirskgnm34gcxoTpN89Y
 - Decisions log: [docs/decisions.md](docs/decisions.md)
 - Simulation setup: [docs/sim-setup.md](docs/sim-setup.md)
+- **New to the team? Start here:** [docs/getting-started-dell.md](docs/getting-started-dell.md)
 
 ## Stack
 
